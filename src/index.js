@@ -15,10 +15,15 @@ export default function App() {
     selectedEvent,
     cancelModal,
     deleteEvent,
+    handleCompletedEvent,
   } = useEventState();
 
   const renderItem = ({ item }) => (
-    <EventItem item={item} onPressHandler={handlerEvent} />
+    <EventItem
+      item={item}
+      onPressHandler={handlerEvent}
+      onToggleCompleted={() => handleCompletedEvent(item.id)}
+    />
   );
 
   return (

@@ -12,7 +12,8 @@ export function useEventState() {
       ...events,
       {
         id: Math.random().toString(),
-        value: text
+        value: text,
+        completed: false
       }
     ]);
     setText('');
@@ -34,6 +35,15 @@ export function useEventState() {
     setModalVisible(!modalVisible);
   };
 
+  const handleCompletedEvent = (id) => {
+    setEvents(events.map((event) => {
+      if (event.id === id) {
+        return { ...event, completed: true };
+      }
+      return event;
+    }));
+  };
+
   return {
     text,
     setText,
@@ -44,5 +54,6 @@ export function useEventState() {
     selectedEvent,
     cancelModal,
     deleteEvent,
+    handleCompletedEvent,
   };
 }

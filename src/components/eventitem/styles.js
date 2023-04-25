@@ -2,8 +2,10 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   itemContainer: {
+    flexDirection: 'row',
     height: 80,
-    justifyContent: 'center',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
     backgroundColor: '#52528C',
     borderRadius: 5,
     marginVertical: 5,
@@ -13,5 +15,11 @@ export const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 16,
     fontWeight: 'bold',
+  },
+  completedItem: {
+    textDecorationLine: 'line-through',
+  },
+  checkbox: {
+    margin: 8,
   },
 });

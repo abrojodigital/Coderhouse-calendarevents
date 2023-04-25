@@ -1,13 +1,19 @@
-import { Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native'
 
-import { styles } from './styles';
+import Checkbox from 'expo-checkbox';
+import { styles } from './styles'
 
-const EventItem = ({ item, onPressHandler }) => {
+const EventItem = ({ item, onPressHandler, onToggleCompleted }) => {
   return (
     <TouchableOpacity style={styles.itemContainer} onPress={() => onPressHandler(item.id)}>
-      <Text style={styles.item}>{item.value}</Text>
+      <Checkbox 
+        style={styles.checkbox}
+        value={item.completed}
+        onValueChange={onToggleCompleted}
+        />
+      <Text style={[styles.item, item.completed && styles.completedItem]}>{item.value}</Text>
     </TouchableOpacity>
-  );
-};
+  )
+}
 
-export default EventItem;
+export default EventItem
