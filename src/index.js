@@ -1,6 +1,6 @@
-import { Input, List, ModalOkCancel } from './components/index';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { EventItem, Input, List, ModalOkCancel } from './components/index';
 
+import { View } from 'react-native';
 import { styles } from './styles';
 import { useEventState } from './hooks/useEventState';
 
@@ -18,9 +18,7 @@ export default function App() {
   } = useEventState();
 
   const renderItem = ({ item }) => (
-    <TouchableOpacity style={styles.itemContainer} onPress={() => handlerEvent(item.id)}>
-      <Text style={styles.item}>{item.value}</Text>
-    </TouchableOpacity>
+    <EventItem item={item} onPressHandler={handlerEvent} />
   );
 
   return (
