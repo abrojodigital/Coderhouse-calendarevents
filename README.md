@@ -1,6 +1,6 @@
-## Coderhouse - comisión 
+## Comisión 43845 Desarrollo de aplicaciones
 
-### Comisión 43845 Desarrollo de aplicaciones
+### Coderhouse
 
 #### Primera app - Lista Optimizada
 
